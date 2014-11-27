@@ -6,25 +6,17 @@ $files = array_slice($files, 0, $n);
 ?>
 
 <?php
-/*
-$file="test.txt";
-$linecount = 0;
-$handle = fopen($file, "r");
-$data = array();
-while(!feof($handle)){
-  $line = fgets($handle);
-  array_push($data, $line);
-  $linecount++;
+
+function flipDiagonally($arr) {
+    $out = array();
+    foreach ($arr as $key => $subarr) {
+    	foreach ($subarr as $subkey => $subvalue) {
+    		$out[$subkey][$key] = $subvalue;
+    	}
+    }
+    return $out;
 }
-fclose($handle);
 
-echo '<pre>';
-print_r($data);
-echo '</pre>';
-*/
-?>
-
-<?php
 if(isset($_POST["val"])){
     $val = $_POST['val'];
     
@@ -39,7 +31,8 @@ if(isset($_POST["val"])){
       $linecount++;
     }
     fclose($handle);
-    echo $data;
+    $dat = str_replace(" ", "!", $data[0]);
+    echo ($dat);
     exit();
     }
 ?>
@@ -56,7 +49,7 @@ function load(value) {
     var ajax = ajaxObj("POST", "index.php");
     ajax.onreadystatechange = function() {
         if(ajaxReturn(ajax)==true){
-            alert(ajax.responseText);
+            _("data").innerHTML = ajax.responseText;
         }  
     }
     ajax.send("val="+val);
@@ -64,8 +57,7 @@ function load(value) {
 </script>
 </head>
  
-<select id="tf_select" name="tf_select"
-  onchange="load(this.value)">
+<select id="tf_select" name="tf_select" onchange="load(this.value)">
   <option value="">Select...</option>
   <?php
     $a = $files;
@@ -74,5 +66,7 @@ function load(value) {
     }
   ?>
 </select>
+
+<div id = "data"></div>
 
 </html>
