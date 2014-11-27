@@ -34,11 +34,10 @@ function test(value) {
   onchange="test(this.value)">
   <option value="">Select...</option>
   <?php
-$a = $files;
-foreach($a as $e)
-{
-  echo "<option value='".$e."'>".$e."</option>";
-}
+    $a = $files;
+    foreach($a as $e) {
+      echo "<option value='".$e."'>".$e."</option>";
+    }
   ?>
 </select>
 
