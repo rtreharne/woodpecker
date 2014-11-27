@@ -1,0 +1,21 @@
+140526: -------------------------------------------------------
+General Objectives:
+    + Develop web application for transfer matrix code
+        - library of nk data
+        - calculate T and R for multilayer stack
+        - fit thickness
+        - minimise R (AR coating) for multi-layer
+        - Caclulate JSC for PV structure using AM1.5 spectrum
+    + User database and login system
+    + Subscription site
+----------------------------------------------------------------
+
+V1.0 workplan --------------------------------------------------
+Targets:
+   + Load n, k files
+       - Only load from server once
+       - keep instances somewhere in javascript (i.e. client side)
+   + Plot n, k data
+       - Have decided to use Chart.js - because it has the best documentation and looks good for line charts with twin axes.
+   + Save data
+   + Save png
