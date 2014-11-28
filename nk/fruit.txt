@@ -1,0 +1,4 @@
+Yellow	Banana
+Orange	Orange
+Red	Apple
+Soft	Mango

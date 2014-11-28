@@ -7,16 +7,6 @@ $files = array_slice($files, 0, $n);
 
 <?php
 
-function flipDiagonally($arr) {
-    $out = array();
-    foreach ($arr as $key => $subarr) {
-    	foreach ($subarr as $subkey => $subvalue) {
-    		$out[$subkey][$key] = $subvalue;
-    	}
-    }
-    return $out;
-}
-
 if(isset($_POST["val"])){
     $val = $_POST['val'];
     
@@ -27,12 +17,13 @@ if(isset($_POST["val"])){
     $data = array();
     while(!feof($handle)){
       $line = fgets($handle);
+      $line = implode(',', explode('	',$line));
       array_push($data, $line);
       $linecount++;
     }
     fclose($handle);
-    $dat = str_replace(" ", "!", $data[0]);
-    echo ($dat);
+    $dat = json_encode($data);
+    echo $dat;
     exit();
     }
 ?>
@@ -49,7 +40,8 @@ function load(value) {
     var ajax = ajaxObj("POST", "index.php");
     ajax.onreadystatechange = function() {
         if(ajaxReturn(ajax)==true){
-            _("data").innerHTML = ajax.responseText;
+            var new_array = JSON.parse(ajax.responseText);
+            _("data").innerHTML = new_array[0][0];
         }  
     }
     ajax.send("val="+val);
