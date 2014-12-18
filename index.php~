@@ -41,7 +41,7 @@ function load(value) {
     ajax.onreadystatechange = function() {
         if(ajaxReturn(ajax)==true){
             var new_array = JSON.parse(ajax.responseText);
-            _("data").innerHTML = new_array[0][0];
+            _("data").innerHTML = new_array[0];
         }  
     }
     ajax.send("val="+val);
