@@ -1,6 +1,6 @@
 var data = [[5,3,1], [10,17,1], [15,4,1], [2,8,1], [5,1,1], [10,12,1], [15,8,1], [2,,1]];
 
-alert(data[0]);
+   
    
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
       , width = 960 - margin.left - margin.right

@@ -35,7 +35,7 @@ var margin = {top: 10, right: 10, bottom: 100, left: 40},
     height = 500 - margin.top - margin.bottom,
     height2 = 500 - margin2.top - margin2.bottom;
 
-var parsefirst = d3.time.format("%b %Y").parse;
+var parseDate = d3.time.format("%b %Y").parse;
 
 var x = d3.time.scale().range([0, width]),
     x2 = d3.time.scale().range([0, width]),
@@ -52,15 +52,15 @@ var brush = d3.svg.brush()
 
 var area = d3.svg.area()
     .interpolate("monotone")
-    .x(function(d) { return x(d.first); })
+    .x(function(d) { return x(d.date); })
     .y0(height)
-    .y1(function(d) { return y(d.price); });
+    .y1(function(d) { return y(d.first); });
 
 var area2 = d3.svg.area()
     .interpolate("monotone")
-    .x(function(d) { return x2(d.first); })
+    .x(function(d) { return x2(d.date); })
     .y0(height2)
-    .y1(function(d) { return y2(d.price); });
+    .y1(function(d) { return y2(d.first); });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -81,8 +81,8 @@ var context = svg.append("g")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
 d3.csv("sp500.csv", type, function(error, data) {
-  x.domain(d3.extent(data.map(function(d) { return d.first; })));
-  y.domain([0, d3.max(data.map(function(d) { return d.price; }))]);
+  x.domain(d3.extent(data.map(function(d) { return d.date; })));
+  y.domain([0, d3.max(data.map(function(d) { return d.first; }))]);
   x2.domain(x.domain());
   y2.domain(y.domain());
 
@@ -125,8 +125,8 @@ function brushed() {
 }
 
 function type(d) {
-  d.first = parsefirst(d.first);
-  d.price = +d.price;
+  d.date = parseDate(d.date);
+  d.first = +d.first;
   return d;
 }
 

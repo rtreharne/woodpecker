@@ -28,6 +28,6 @@ circle {
         <div id="content" class='content'>
           <!-- /the chart goes here -->
         </div>
-        <script type="text/javascript" src="scatterchart2.js"></script>
+        <script type="text/javascript" src="scatterchart.js"></script>
       </body>
     </html>

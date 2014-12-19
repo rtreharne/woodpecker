@@ -1,6 +1,5 @@
 var data = [[5,3,1], [10,17,1], [15,4,1], [2,8,1], [5,1,1], [10,12,1], [15,8,1], [2,,1]];
 
-alert(data[0]);
    
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
       , width = 960 - margin.left - margin.right
@@ -14,7 +13,7 @@ alert(data[0]);
     	      .domain([0, d3.max(data, function(d) { return d[1]; })])
     	      .range([ height, 0 ]);
  
-    var chart = d3.select('body')
+    var chart = d3.select('#content')
 	.append('svg:svg')
 	.attr('width', width + margin.right + margin.left)
 	.attr('height', height + margin.top + margin.bottom)

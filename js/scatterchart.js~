@@ -1,7 +1,5 @@
-var data = [[5,3,1], [10,17,1], [15,4,1], [2,8,1], [5,1,1], [10,12,1], [15,8,1], [2,,1]];
+function scatter(data) {
 
-alert(data[0]);
-   
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
       , width = 960 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
@@ -14,7 +12,7 @@ alert(data[0]);
     	      .domain([0, d3.max(data, function(d) { return d[1]; })])
     	      .range([ height, 0 ]);
  
-    var chart = d3.select('#content')
+    var chart = d3.select('body')
 	.append('svg:svg')
 	.attr('width', width + margin.right + margin.left)
 	.attr('height', height + margin.top + margin.bottom)
@@ -54,4 +52,6 @@ alert(data[0]);
           .attr("cx", function (d,i) { return x(d[0]); } )
           .attr("cy", function (d) { return y(d[1]); } )
           .attr("r", 8);
+          
+}
 
