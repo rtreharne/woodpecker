@@ -10,12 +10,6 @@ General Objectives:
     + Subscription site
 ----------------------------------------------------------------
 
-141220:
-+ cdt-pv.org/woodpecker
-  - <select> ITO, CdS, CdTe nk data
-  - plot in svg
-
-
 V1.0 workplan --------------------------------------------------
 Targets:
    + Load n, k files

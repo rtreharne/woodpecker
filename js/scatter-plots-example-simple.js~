@@ -1,5 +1,7 @@
 function simpleScatterPlot (filename) {
 
+_("plot").innerHTML = "";
+
 // Set margins and size
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 485 - margin.left - margin.right,
@@ -28,7 +30,7 @@ var svg = d3.select(".svg-holder-simple").append("svg")
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("nk/test.csv", function(error, data) {
+d3.csv(filename, function(error, data) {
   data.forEach(function(d) {
     d.percentage_diabetes = +d.percentage_diabetes;
     d.per_capita_spend = +d.per_capita_spend;
@@ -82,4 +84,4 @@ d3.csv("nk/test.csv", function(error, data) {
 
 }
 
-simpleScatterPlot();
+//simpleScatterPlot();

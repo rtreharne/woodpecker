@@ -28,7 +28,7 @@ var svg = d3.select(".svg-holder-simple").append("svg")
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("data/test.csv", function(error, data) {
+d3.csv("nk/test.csv", function(error, data) {
   data.forEach(function(d) {
     d.percentage_diabetes = +d.percentage_diabetes;
     d.per_capita_spend = +d.per_capita_spend;
