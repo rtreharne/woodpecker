@@ -17,7 +17,7 @@ $files = array_slice($files, 0, $n);
     <script src="js/ajax.js"></script>
   </head>
   <body>
-  
+  <h1>n and k plotter</h1>  
     <select id="tf_select" name="tf_select" onchange="plotNew('nk/'+this.value);">
       <option value="">Select...</option>
         <?php
