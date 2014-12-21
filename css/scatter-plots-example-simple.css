@@ -4,7 +4,7 @@
 .svg-holder-simple {
 	font: 10px sans-serif;
 	background:white;
-	width: 50%;
+	width: 100%;
 }
 
 
@@ -12,7 +12,7 @@
 
 .svg-holder-simple .axis path,
 .svg-holder-simple .axis line {
-  fill: none;
+  fill: white;
   stroke: #ccc;
   shape-rendering: crispEdges;
 }

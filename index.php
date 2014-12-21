@@ -15,6 +15,24 @@ $files = array_slice($files, 0, $n);
     <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/ajax.js"></script>
+   <style>
+    path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+.svg-holder-simple {
+  width: 100%;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+  </style>
   </head>
   <body>
   
@@ -29,8 +47,8 @@ $files = array_slice($files, 0, $n);
     </select>
 
     <div id="plot" class="svg-holder svg-holder-simple"></div>
-    <link rel="stylesheet" href="css/scatter-plots-example-simple.css" />
-    <script type="text/javascript" src="js/scatter-plots-example-simple.js"></script>
+<link rel="stylesheet" href="css/scatter-plots-example-simple.css" />
+    <script type="text/javascript" src="js/plot.js"></script>
     <script>
     function plotNew(filename) {
       _("plot").innerHTML= "";
